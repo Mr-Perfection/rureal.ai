@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>agentdid — Identity for the agentic era</title>
+  <meta name="description" content="Cryptographic proof that a human stands behind an AI agent. Open-source CLI + API using DIDs and verifiable credentials.">
+  <meta property="og:title" content="agentdid — Identity for the agentic era">
+  <meta property="og:description" content="Cryptographic proof that a human stands behind an AI agent.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rureal.ai">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Identity for the agentic era</h1>
+    <p class="subtitle">Cryptographic proof that a human stands behind an AI agent.</p>
+
+    <div class="install-pill" onclick="copyInstall()" role="button" tabindex="0" aria-label="Copy pip install command">
+      <code>pip install agentdid</code>
+      <span class="copy-hint">click to copy</span>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-header">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+      </div>
+      <pre><code><span class="prompt">$</span> agentdid keygen
+<span class="output">Keypair saved to ~/.agentdid/</span>
+
+<span class="prompt">$</span> agentdid register --name <span class="string">"my-agent"</span> --email <span class="string">you@example.com</span>
+<span class="output">Registered did:key:z6MkjVXU...
+Credential saved to ~/.agentdid/credential.jwt</span>
+
+<span class="prompt">$</span> agentdid verify did:key:z6MkjVXU...
+<span class="output">Status: <span class="success">valid</span>
+Level:  L1 (email verified)
+Owner:  you@example.com</span></code></pre>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://github.com/Mr-Perfection/agentdid" class="btn btn-primary">Get Started</a>
+      <a href="https://github.com/Mr-Perfection/agentdid#readme" class="btn btn-outline">View Docs</a>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="steps">
+      <div class="step">
+        <span class="step-number">1</span>
+        <h3>Generate</h3>
+        <code class="step-cmd">agentdid keygen</code>
+        <p>Ed25519 keypair, saved locally</p>
+      </div>
+      <div class="step">
+        <span class="step-number">2</span>
+        <h3>Register</h3>
+        <code class="step-cmd">agentdid register</code>
+        <p>DID created, credential issued</p>
+      </div>
+      <div class="step">
+        <span class="step-number">3</span>
+        <h3>Verify</h3>
+        <code class="step-cmd">agentdid verify did:key:z6Mk...</code>
+        <p>Anyone can check</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Levels -->
+  <section class="trust-levels">
+    <div class="trust-card">
+      <div class="trust-row">
+        <span class="trust-level">L0</span>
+        <span class="trust-name">Registered</span>
+        <span class="trust-desc">Agent has a cryptographic identity</span>
+      </div>
+      <div class="trust-row">
+        <span class="trust-level">L1</span>
+        <span class="trust-name">Email Verified</span>
+        <span class="trust-desc">Agent is linked to a verified email</span>
+      </div>
+      <div class="trust-row dimmed">
+        <span class="trust-level">L2</span>
+        <span class="trust-name">ID Verified</span>
+        <span class="trust-desc">Coming soon</span>
+      </div>
+      <div class="trust-row dimmed">
+        <span class="trust-level">L3</span>
+        <span class="trust-name">Private</span>
+        <span class="trust-desc">Coming soon</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="https://github.com/Mr-Perfection/agentdid">GitHub</a>
+      <a href="https://pypi.org/project/agentdid/">PyPI</a>
+      <a href="https://github.com/Mr-Perfection/agentdid#readme">Docs</a>
+      <a href="https://github.com/Mr-Perfection/agentdid/blob/main/LICENSE">Apache 2.0</a>
+    </nav>
+    <p class="brand">Built by rureal.ai</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
